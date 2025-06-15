@@ -2,13 +2,13 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
-[![tests](https://github.com/Bilbottom/db-query-profiler/actions/workflows/tests.yaml/badge.svg)](https://github.com/Bilbottom/db-query-profiler/actions/workflows/tests.yaml)
-[![coverage](https://raw.githubusercontent.com/Bilbottom/db-query-profiler/main/coverage.svg)](https://github.com/dbrgn/coverage-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/Bilbottom/db-query-profiler)
+[![tests](https://github.com/billwallis/db-query-profiler/actions/workflows/tests.yaml/badge.svg)](https://github.com/billwallis/db-query-profiler/actions/workflows/tests.yaml)
+[![coverage](https://raw.githubusercontent.com/billwallis/db-query-profiler/main/coverage.svg)](https://github.com/dbrgn/coverage-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/db-query-profiler)
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Bilbottom/db-query-profiler/main.svg)](https://results.pre-commit.ci/latest/github/Bilbottom/db-query-profiler/main)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/billwallis/db-query-profiler/main.svg)](https://results.pre-commit.ci/latest/github/billwallis/db-query-profiler/main)
 
 </div>
 
@@ -35,7 +35,7 @@ pip install db-query-profiler
 If you'd prefer, you can install from source:
 
 ```
-pip install git+https://github.com/Bilbottom/db-query-profiler.git@main
+pip install git+https://github.com/billwallis/db-query-profiler.git@main
 ```
 
 ## Sample Output 📝
