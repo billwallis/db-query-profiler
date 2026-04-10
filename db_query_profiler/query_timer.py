@@ -8,8 +8,8 @@ import inspect
 import pathlib
 import timeit
 import warnings
-from collections.abc import Generator
-from typing import Any, Callable, List, Protocol, Union
+from collections.abc import Callable, Generator
+from typing import Any, Protocol
 
 import tqdm
 
@@ -46,22 +46,22 @@ class Runner:
     and summarise their statistics.
     """
 
-    def __init__(self, runner: Callable, name: str):
+    def __init__(self, runner: Callable, name: str) -> None:
         self.runner = runner
         self.name = name
 
         self.repeat: int = 0
         self.total_time: float = 0.0
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Runner(runner={self.runner}, name='{self.name}')"
 
-    def __str__(self):
+    def __str__(self) -> str:
         sig = inspect.signature(self.runner)
 
         return f"Runner(runner=[[{sig.parameters}], {sig.return_annotation}], name={self.name})"
 
-    def __call__(self, time_it: bool = True):
+    def __call__(self, time_it: bool = True) -> None:
         if time_it:
             self.repeat += 1
             self.total_time += timeit.timeit(self.runner, number=1)
@@ -96,7 +96,8 @@ def _get_query_filepaths(directory: pathlib.Path) -> Generator:
         if path.is_file():
             if path.suffix != ".sql":
                 warnings.warn(
-                    f"File {path} does not end with '.sql'. Non-SQL code might attempt to be executed."
+                    f"File {path} does not end with '.sql'. Non-SQL code might attempt to be executed.",
+                    stacklevel=2,
                 )
 
             yield path
@@ -105,7 +106,7 @@ def _get_query_filepaths(directory: pathlib.Path) -> Generator:
 def _create_query_runners(
     directory: pathlib.Path,
     db_conn: DatabaseConnection,
-) -> List[Runner]:
+) -> list[Runner]:
     """
     Return a list of ``Runners`` each corresponding to the files in the
     ``filepath``.
@@ -125,7 +126,7 @@ def _create_query_runners(
     ]
 
 
-def _run_runners(runners: List[Runner], repeat: int) -> None:
+def _run_runners(runners: list[Runner], repeat: int) -> None:
     """
     Run the ``runners`` ``repeat`` times.
 
@@ -143,7 +144,7 @@ def _run_runners(runners: List[Runner], repeat: int) -> None:
             runner()
 
 
-def _print_runner_stats(runners: List[Runner]) -> None:
+def _print_runner_stats(runners: list[Runner]) -> None:
     """
     Print the average run times of the ``runners``.
 
@@ -161,7 +162,7 @@ def _print_times() -> Callable:
 
     def decorator(func: Callable) -> Callable:
         @functools.wraps(func)
-        def wrapper(*args, **kwargs) -> Any:
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
             print(f"Start time: {datetime.datetime.now()}")
             print(40 * "-")
             func(*args, **kwargs)
@@ -180,7 +181,7 @@ def time_queries(
     *,
     conn: DatabaseConnection,
     repeat: int,
-    directory: Union[str, pathlib.Path],
+    directory: str | pathlib.Path,
 ) -> None:
     """
     Time the SQL queries in the directory and print the results.
@@ -210,7 +211,7 @@ def time_queries(
     if not directory.exists():
         raise FileNotFoundError(f"Directory '{directory}' does not exist.")
 
-    runners: List[Runner] = _create_query_runners(
+    runners: list[Runner] = _create_query_runners(
         directory=directory,
         db_conn=conn,
     )
