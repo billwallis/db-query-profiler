@@ -1,14 +1,14 @@
-<div align="center">
+<span align="center">
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![tests](https://github.com/billwallis/db-query-profiler/actions/workflows/tests.yaml/badge.svg)](https://github.com/billwallis/db-query-profiler/actions/workflows/tests.yaml)
-[![coverage](https://raw.githubusercontent.com/billwallis/db-query-profiler/main/coverage.svg)](https://github.com/dbrgn/coverage-badge)
+[![coverage](https://raw.githubusercontent.com/billwallis/db-query-profiler/refs/heads/main/coverage.svg)](https://smarie.github.io/python-genbadge/)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/db-query-profiler)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/billwallis/db-query-profiler/main.svg)](https://results.pre-commit.ci/latest/github/billwallis/db-query-profiler/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/db-query-profiler)](https://shields.io/badges/git-hub-last-commit)
 
-</div>
+</span>
 
 ---
 
@@ -148,13 +148,10 @@ To connect to a SQLite database in a read-only way, use the `uri=True` parameter
 db_conn = sqlite3.connect("file:path/to/database.db?mode=ro", uri=True)
 ```
 
-## Contributing 🤝
+## Contributing
 
-The Python packaging is managed with [uv](https://github.com/astral-sh/uv), but that should be the only dependency.
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and then install the dependencies:
 
-To get started, just clone the repo, install the dependencies, and enable [pre-commit](https://pre-commit.com/):
-
-```bash
-uv sync --all-groups
-pre-commit install --install-hooks
+```shell
+uvx --from poethepoet poe install
 ```
