@@ -7,6 +7,7 @@
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/billwallis/db-query-profiler/main.svg)](https://results.pre-commit.ci/latest/github/billwallis/db-query-profiler/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/billwallis/db-query-profiler)](https://shields.io/badges/git-hub-last-commit)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/db_query_profiler)](https://shields.io/badges/py-pi-downloads)
 
 </span>
 
