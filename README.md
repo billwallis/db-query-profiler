@@ -79,11 +79,7 @@ import db_query_profiler
 
 def main() -> None:
     db_conn = sqlite3.connect(":memory:")  # Or a path to a database file
-    db_query_profiler.time_queries(
-        conn=db_conn,
-        repeat=5,
-        directory="queries"
-    )
+    db_query_profiler.time_queries(conn=db_conn, repeat=5, directory="queries")
 
 
 if __name__ == "__main__":
