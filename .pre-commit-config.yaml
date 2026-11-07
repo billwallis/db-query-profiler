@@ -87,7 +87,7 @@ repos:
       - <<: *tests-config
         id: coverage-xml
         name: Write coverage XML report
-        entry: coverage xml --include 'db_query_profiler/*' --quiet
+        entry: coverage xml --include 'src/*' --quiet
       - <<: *tests-config
         id: coverage-badge
         name: Generate coverage badge
