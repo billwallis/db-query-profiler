@@ -10,7 +10,7 @@ description = "Lightweight database query profiler."
 authors = [{name = "billwallis"}]
 readme = "README.md"
 license-files = ["LICENSE"]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "tqdm>=4.0.0",
 ]
