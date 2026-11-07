@@ -1,7 +1,6 @@
 <span align="center">
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![tests](https://github.com/billwallis/db-query-profiler/actions/workflows/tests.yaml/badge.svg)](https://github.com/billwallis/db-query-profiler/actions/workflows/tests.yaml)
 [![coverage](https://raw.githubusercontent.com/billwallis/db-query-profiler/refs/heads/main/coverage.svg)](https://smarie.github.io/python-genbadge/)
 
@@ -147,8 +146,9 @@ db_conn = sqlite3.connect("file:path/to/database.db?mode=ro", uri=True)
 
 ## Contributing
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and then install the dependencies:
+Install the dependencies:
 
 ```shell
-uvx --from poethepoet poe install
+pip install --editable . --group dev --group test
+pre-commit install --install-hooks
 ```
