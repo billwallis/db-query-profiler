@@ -30,12 +30,6 @@ Grab a copy from PyPI like usual:
 pip install db-query-profiler
 ```
 
-If you'd prefer, you can install from source:
-
-```
-pip install git+https://github.com/billwallis/db-query-profiler.git@main
-```
-
 ## Sample Output 📝
 
 Given a set of queries (details below), this package prints the average time in seconds taken to run each query, as well as the percentage of the total time taken by each query.
