@@ -27,10 +27,6 @@ test = [
 ]
 
 
-[tool.setuptools]
-packages = ["db_query_profiler"]
-
-
 [tool.poe]
 verbosity = -1
 envfile.optional = ".env"
@@ -45,7 +41,7 @@ test.shell = """
     coverage run -m pytest -vvv
     coverage xml --quiet
     coverage report --no-skip-covered --include 'tests/*'
-    coverage report --no-skip-covered --include 'db_query_profiler/*'
+    coverage report --no-skip-covered --include 'src/*'
 """
 
 [tool.poe.tasks.lint]
@@ -73,7 +69,7 @@ shell = """
 testpaths = ["tests"]
 
 [tool.coverage]
-run.source = ["db_query_profiler", "tests"]
+run.source = ["src", "tests"]
 run.plugins = ["covdefaults"]  # https://youtu.be/70T6OxKwxm0
 report.fail_under = 80
 report.exclude_lines = [
