@@ -1,6 +1,7 @@
 """
 End-to-end tests for the package.
 """
+# TODO: Run this with pytest
 
 import shutil
 import sqlite3
@@ -43,7 +44,7 @@ def main() -> None:
     https://stackoverflow.com/questions/72712965/does-the-src-folder-in-pypi-packaging-have-a-special-meaning-or-is-it-only-a-co
     """
     db_conn = create_database_connection()
-    directory = Path("tests/end-to-end/queries").absolute()
+    directory = Path("tests/end_to_end/queries").absolute()
     end_to_end_directory_teardown(path=directory)
     end_to_end_directory_setup(path=directory)
     db_query_profiler.time_queries(conn=db_conn, repeat=5, directory=directory)
